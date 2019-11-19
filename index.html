@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Neighborhood map</title>
+</head>
+<body>
+    <!-- container -->
+    <div class="side">
+          <div><h2>Cairo Governorate</h2></div>
+          <!-- Search -->
+        <div id="search">
+            <input id="input-box" type="text" data-bind="textInput: FilteredItem, valueUpdate: 'afterkeydown'" placeholder="Search">
+        </div>
+        <!--list-->
+        <div class="list">
+            <ul id="result" data-bind="foreach: locationList">
+         <li>
+        <a data-bind="text:title , click: view"></a>
+                </li>
+            </ul>
+        </div>
+       </div>
+    
+    <!-- map Container  -->
+    <div id="map"></div>
+
+<!-- libraries -->
+   <script src="js/lib/knockout-3.4.2.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+<!-- Key API -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqC_xlM7aIA363Mv2FU6wbDnwwFl0iOd4
+&callback=initMap" onerror="errorHandle()"
+  type="text/javascript"></script>
+
+</body>
+</html>
